@@ -11,16 +11,17 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
 
-
-
 Route::group(['middleware' => ['web','auth']], function()
 {
-	Route::get('/home', 'HomeController@index');
-	Route::get('/', function(){
+	
+	Route::get('/home', function(){
 
 		if(Auth::user()->role == 2)
 		{
