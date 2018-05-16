@@ -28,9 +28,6 @@
 		<div class="top_nav">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
-						<div class="top_nav_left">Gratis Antar</div>
-					</div>
 					<div class="col-md-6 text-right">
 						<div class="top_nav_right">
 							<ul class="top_nav_menu">
