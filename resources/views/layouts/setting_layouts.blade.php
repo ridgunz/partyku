@@ -76,7 +76,8 @@
 				</div>
 			</div>
 		</div>
- <!-- Main Navigation -->
+
+		 <!-- Main Navigation -->
 
         <div class="main_nav_container">
             <div class="container">
@@ -111,6 +112,7 @@
         </div>
 
     </header>
+
 	@yield('content')
 
 	<!-- Footer -->

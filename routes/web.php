@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/setting_vendor/create','ProfileVendorController@create');
 
 Route::group(['middleware' => ['web','auth']], function()
 {
@@ -32,6 +33,14 @@ Route::group(['middleware' => ['web','auth']], function()
 		}
 
 	});
+
+
+	Route::get('/setting_vendor','ProfileVendorController@read');
+	
+	Route::post('/setting_vendor','ProfileVendorController@store');
+	Route::get('/setting_vendor/{vendorID}/edit','ProfileVendorController@edit');
+	Route::put('/setting_vendor/{vendorID}','ProfileVendorController@update');
+
 });
 
 Route::get('role', ['middleware' => ['web', 'auth', 'role'], function()

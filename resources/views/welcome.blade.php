@@ -1,4 +1,4 @@
-@extends('layouts.home_vendor_layouts')
+@extends('layouts.welcome_layouts')
 
 @section('content')
 
