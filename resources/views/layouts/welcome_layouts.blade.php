@@ -48,17 +48,23 @@
 												<li><a href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                         				@else
                             					<li class="dropdown">
-                                				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    			{{ Auth::user()->name }} <span class="caret"></span>
-                                				</a>
+                            					<a href="#">{{ Auth::user()->name }}</a>
+                                		        </li>
 
-                                			<ul class="dropdown-menu" role="menu">
-                                    		<li>
+                                		        @if (Auth::user()->role == 1)
+                                		           <li><a href="{{ url('/setting_customer') }}">Setting</a></li>
+                                		        @else
+                                		        	<li><a href="{{ url('/setting_vendor') }}">Setting</a></li>
+                                		        @endif
+
+                                		       	<li>                          		
                                         		<a href="{{ route('logout') }}"
                                             		onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             		Logout
                                         		</a>
+                                        		</li>
+
 
                                        				 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                            				 {{ csrf_field() }}

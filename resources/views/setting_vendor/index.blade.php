@@ -1,4 +1,4 @@
-@extends('layouts.setting_layouts')
+@extends('layouts.setting_layouts_vendor')
 
 @section('content')
 
@@ -23,33 +23,31 @@
                         			<div class="form-group">
                             		<label class="col-md-2">Nama Vendor</label>
                             		<div class="col-md-6">
-                                	<input type="text" name="nama" class="form-control" value="{{ $vendor->namaVendor }}"></input>
+                                	<input type="text" name="nama" class="form-control" readonly value="{{ $vendor->namaVendor }}"></input>
                             		</div>
                         			</div>
 
                         			<div class="form-group">
                             		<label class="col-md-2">Phone</label>
                             		<div class="col-md-6">
-                                	<input type="text" name="nama" class="form-control" value="{{ $vendor->phone }}"></input>
+                                	<input type="text" name="phone" class="form-control" readonly value="{{ $vendor->phone }}"></input>
                             		</div>
                         			</div>
 
                         			<div class="form-group">
                             		<label class="col-md-2">Description</label>
                             		<div class="col-md-6">
-                                	<input type="text" name="nama" class="form-control" value="{{ $vendor->description }}"></input>
+                                	<input type="text" name="desciption" class="form-control" readonly value="{{ $vendor->description }}"></input>
                             		</div>
                         			</div>
 
                         			<div class="form-group">
                             		<label class="col-md-2">Alamat</label>
                             		<div class="col-md-6">
-                                	<input type="text" name="nama" class="form-control" value="{{ $vendor->alamat }}"></input>
+                                	<input type="text" name="alamat" class="form-control" readonly value="{{ $vendor->alamat }}"></input>
                             		</div>
                         			</div>
 
-                   
-                        
                         			<div class="form-group">
                             		<div class="col-md-6 col-md-offset-2">
                                 	<a href="{{ url('/setting_vendor/'.$vendor->vendorID.'/edit') }}" class="btn btn-info">Edit</a>

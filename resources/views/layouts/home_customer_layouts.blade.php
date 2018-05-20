@@ -51,7 +51,7 @@
                             					<a href="#">{{ Auth::user()->name }}</a>
                                 		        </li>
 
-                                		        <li><a href="{{ url('/setting_vendor') }}">Setting</a></li>
+                                		        <li><a href="{{ url('/setting_customer') }}">Setting</a></li>
                                 		        
                                 		        <li>                          		
                                         		<a href="{{ route('logout') }}"
@@ -76,8 +76,7 @@
 				</div>
 			</div>
 		</div>
-
-		 <!-- Main Navigation -->
+ <!-- Main Navigation -->
 
         <div class="main_nav_container">
             <div class="container">
@@ -112,7 +111,6 @@
         </div>
 
     </header>
-
 	@yield('content')
 
 	<!-- Footer -->

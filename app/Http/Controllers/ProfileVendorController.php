@@ -10,13 +10,14 @@ use DB;
 use Redirect;
 use View;
 use App\vendor;
+use Auth;
 
 class ProfileVendorController extends Controller
 {
 
      public function read()
     {
-    	$vendor = Vendor::all();
+    	$vendor = Vendor::where('id','=',Auth::id())->get();
 
     	return view('setting_vendor.index', compact('vendor'));
     }
@@ -26,34 +27,36 @@ class ProfileVendorController extends Controller
     }
 
     public function store(Request $request){
-      Vendor::create([
-        
-        'namaVendor'=>$request->input('namaVendor'),
-        'phone'=>$request->input('phone'),
-        'description'=>$request->input('description'),
-        'alamat'=>$request->input('alamat')
+      
+        $vendor = new Vendor;
+        $vendor->namaVendor = $request->namaVendor;
+        $vendor->phone = $request->phone;
+        $vendor->description = $request->description;
+        $vendor->alamat = $request->alamat;
+        $vendor->id = Auth::id();
+        $vendor->save();
      
-      ]);
-      return Redirect('/home_vendor');
-    }
-
-    public function update(Request $request, $vendorID)
-    {
-        $vendor = Vendor::find($vendorID);
-        $vendor->namaVendor=$request->input('namaVendor');
-        $vendor->phone=$request->input('phone');
-        $vendor->description=$request->input('description');
-        $vendor->alamat=$request->input('alamat');
-       
-        $vendor->update();
-
-      return redirect('/setting_vendor');
+      
+      return view('/home_vendor');
     }
 
     public function edit($vendorID)
     {
-    	$vendor = Vendor::find($vendorID); 
+      $vendor= Vendor::find($vendorID); 
 
       return view('setting_vendor.edit',compact('vendor'));
+    }
+
+      public function update(Request $request, $vendorID)
+    {
+        $vendor = vendor::find($vendorID);
+        $vendor->namaVendor=$request->input('namaVendor');
+        $vendor->phone=$request->input('phone');
+        $vendor->description=$request->input('description');
+        $vendor->alamat=$request->input('alamat');
+        
+        $vendor->update();
+
+      return redirect('/setting_vendor');
     }
 }

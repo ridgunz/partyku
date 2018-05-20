@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/setting_vendor/create','ProfileVendorController@create');
+Route::get('/setting_customer/create','ProfileCustomerController@create');
 
 Route::group(['middleware' => ['web','auth']], function()
 {
@@ -29,19 +30,44 @@ Route::group(['middleware' => ['web','auth']], function()
 			return view('home_vendor');
 		}else
 		{
-			return view('home');
+			return view('home_customer');
 		}
 
 	});
 
+	
+
 
 	Route::get('/setting_vendor','ProfileVendorController@read');
-	
+
 	Route::post('/setting_vendor','ProfileVendorController@store');
+
+
 	Route::get('/setting_vendor/{vendorID}/edit','ProfileVendorController@edit');
 	Route::put('/setting_vendor/{vendorID}','ProfileVendorController@update');
 
+
+	Route::get('/setting_customer','ProfileCustomerController@read');
+
+	Route::post('/setting_customer','ProfileCustomerController@store');
+
+	Route::get('/setting_customer/{customerID}/edit','ProfileCustomerController@edit');
+	Route::put('/setting_customer/{customerID}','ProfileCustomerController@update');
+
+	
 });
+
+Route::get('/form', function(){
+
+		if(Auth::user()->role == 2)
+		{
+			return view('setting_vendor/create');
+		}else
+		{
+			return view('setting_customer/create');
+		}
+
+	});
 
 Route::get('role', ['middleware' => ['web', 'auth', 'role'], function()
 {

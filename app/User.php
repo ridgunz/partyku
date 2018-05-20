@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function vendor()
+    {
+        return $this->belongsTo('vendor','vendorID');
+    }
+
+     public function customer()
+    {
+        return $this->belongsTo('customer','customerID');
+    }
 }
