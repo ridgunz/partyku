@@ -54,7 +54,7 @@ Route::group(['middleware' => ['web','auth']], function()
 	Route::get('/setting_customer/{customerID}/edit','ProfileCustomerController@edit');
 	Route::put('/setting_customer/{customerID}','ProfileCustomerController@update');
 
-	
+	Route::get('/cart','Cart@indexes');
 });
 
 Route::get('/form', function(){
