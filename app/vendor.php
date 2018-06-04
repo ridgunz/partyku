@@ -14,5 +14,10 @@ class vendor extends Model
   {
   	return $this->hasOne('user','id');
   }
+
+  public function jasa()
+  {
+  	return $this->hasMany('jasa','vendorID');
+  }
     
 }
