@@ -55,6 +55,7 @@ Route::group(['middleware' => ['web','auth']], function()
 	Route::put('/setting_customer/{customerID}','ProfileCustomerController@update');
 
 
+
 	Route::get('/jasa','JasaController@read');
 
 	Route::get('/jasa/create','JasaController@create');
@@ -66,6 +67,9 @@ Route::group(['middleware' => ['web','auth']], function()
 
 
 	
+
+	Route::get('/cart','Cart@indexes');
+
 });
 
 Route::get('/form', function(){
