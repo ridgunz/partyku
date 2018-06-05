@@ -13,14 +13,22 @@ use App\jasa;
 use App\vendor;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Auth;
 
 class JasaController extends Controller
 {
     public function read()
     {
-    	$jasa = Jasa::all();
+    	$jasa = Jasa::where('id','=',Auth::id())->get();;
 
     	return view('jasa.index', compact('jasa'));
+    }
+
+    public function read2()
+    {
+      $jasa = Jasa::all();
+
+      return view('jasa_customer.index', compact('jasa'));
     }
 
      public function create(){
@@ -55,14 +63,15 @@ class JasaController extends Controller
         $jasa->namaJasa = $request->namaJasa;
         $jasa->harga = $request->harga;
         $jasa->statusJasa = $request->statusJasa;
+        $jasa->id = Auth::id();
         
         $file = $request->file('fotoJasa');
-   		$extension = $file->getClientOriginalExtension();
-    	Storage::disk('public')->put($file->getFilename().'.'.$extension,  File::get($file));
+   		  $extension = $file->getClientOriginalExtension();
+    	  Storage::disk('public')->put($file->getFilename().'.'.$extension,  File::get($file));
     
     	//$jasa->mime = $file->getClientMimeType();
     	//$jasa->original_filename = $file->getClientOriginalName();
-    	$jasa->fotoJasa = $file->getFilename().'.'.$extension;
+    	  $jasa->fotoJasa = $file->getFilename().'.'.$extension;
 
         $jasa->save();
 
@@ -85,6 +94,14 @@ class JasaController extends Controller
         $jasa->namaJasa=$request->input('namaJasa');
         $jasa->harga=$request->input('harga');
         $jasa->statusJasa=$request->input('statusJasa');
+
+        $file = $request->file('fotoJasa');
+   		$extension = $file->getClientOriginalExtension();
+    	Storage::disk('public')->put($file->getFilename().'.'.$extension,  File::get($file));
+    
+    	//$jasa->mime = $file->getClientMimeType();
+    	//$jasa->original_filename = $file->getClientOriginalName();
+    	$jasa->fotoJasa = $file->getFilename().'.'.$extension;
         
         $jasa->update();
 

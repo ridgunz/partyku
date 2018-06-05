@@ -35,6 +35,18 @@ Route::group(['middleware' => ['web','auth']], function()
 
 	});
 
+	Route::get('/jasa', function(){
+
+		if(Auth::user()->role == 2)
+		{
+			return view('jasa');
+		}else
+		{
+			return view('jasa_customer');
+		}
+
+	});
+
 	
 
 
@@ -66,6 +78,7 @@ Route::group(['middleware' => ['web','auth']], function()
 	Route::get('deleteJasa/{jasaID}','JasaController@delete');
 
 
+	Route::get('/jasa_customer','JasaController@read2');
 	
 
 	Route::get('/cart','Cart@indexes');
