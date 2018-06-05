@@ -89,7 +89,7 @@
                         <nav class="navbar">
                             <ul class="navbar_menu">
                                 <li><a href="{{ url('/home') }}">home</a></li>
-                                <li><a href="{{ url('/jasa') }}">Jasa</a></li>
+                                <li><a href="{{ url('/customer_jasa/index') }}">Jasa</a></li>
                                 <li><a href="contact.html">contact</a></li>
                             </ul>
                             <ul class="navbar_user">

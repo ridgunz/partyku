@@ -78,10 +78,9 @@ Route::group(['middleware' => ['web','auth']], function()
 	Route::get('deleteJasa/{jasaID}','JasaController@delete');
 
 
+
 	Route::get('/jasa_customer','JasaController@read2');
 	
-
-	Route::get('/cart','Cart@indexes');
 
 });
 
