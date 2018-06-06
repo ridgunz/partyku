@@ -27,10 +27,13 @@ Route::group(['middleware' => ['web','auth']], function()
 
 		if(Auth::user()->role == 2)
 		{
-			return view('home_vendor');
+			$jasa = App\Jasa::all();
+
+			return view('home_vendor',compact('jasa'));
 		}else
 		{
-			return view('home_customer');
+			$jasa = App\Jasa::all();
+			return view('home_customer',compact('jasa'));
 		}
 
 	});
