@@ -13,36 +13,36 @@
           
             <div class="row">
                 <div class="col">
-                    <div class="Layanan Jasa">
+                    <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-                        <div class="jasa-vendor">
-                            <div class="jasa-vendor-1">
-                                <h3>Layanan Jasa</h3>
-                                <a href="{{ url('jasa/create') }}" class="btn btn-info pull-right">Tambah Jasa</a><br><br>
-                                @foreach ($jasa as $jasa)
-                             	<form class="form-horizontal" method="post" >
-
-                        			<div class="product-item men">
-                            		<div class="product discount product_filter">
-                                	<div class="product_image">
+                        <!-- Product 1 -->
+                         @foreach ($jasa as $jasa)
+                        <div class="product-item men">
+                            <div class="product discount product_filter">
+                             <form method="POST" action="{{url('cart')}}">
+                             <input type="hidden" name="jasaID" value="{{$jasa->jasaID}}">
+                                {{ csrf_field() }}
+                               <div class="product_image">
                                     <img src="{{ url('storage/images/'.$jasa->fotoJasa) }}" alt="">
-                                	</div>
-                                	<div class="favorite favorite_left"></div>
-                                	<div class="product_info">
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_info">
                                     <h6 class="product_name"><a href="#">{{ $jasa->namaJasa }}</a></h6>
                                     <div class="product_price">Rp. {{ $jasa->harga }}</div>
                                     <div class="status_jasa">{{ $jasa->statusJasa }}</div>
-                                    <a href="{{ url('/jasa/'.$jasa->jasaID.'/edit') }}" class="btn btn-info">Edit</a>
+                                    </div>
+                                    <center>
+                                <a href="{{ url('/jasa/'.$jasa->jasaID.'/edit') }}" class="btn btn-info">Edit</a>
                                     <a href="deleteJasa/{{ $jasa->jasaID }}" class="btn btn-info" onclick="alert('Apakah anda yakin ingin menghapus data?')">Delete</a></td>
-                                	</div>
-                            		</div>
-                            		
-                        			</div>
-                        		
-                    			</form>
-                    			@endforeach
-                            </div>
-                           
+                                    </center>
+                            </form>
                         </div>
+
+                    </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </div>
 
 @endsection
