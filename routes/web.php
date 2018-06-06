@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+	$jasa = App\Jasa::all();
+
+    return view('welcome',compact('jasa'));
 });
 
 Auth::routes();
