@@ -11,6 +11,7 @@ use Redirect;
 use View;
 use App\vendor;
 use Auth;
+use App\Jasa;
 
 class ProfileVendorController extends Controller
 {
@@ -29,6 +30,7 @@ class ProfileVendorController extends Controller
     public function store(Request $request){
       
         $vendor = new Vendor;
+        $jasa = Jasa::all();
         $vendor->namaVendor = $request->namaVendor;
         $vendor->phone = $request->phone;
         $vendor->description = $request->description;
@@ -37,7 +39,7 @@ class ProfileVendorController extends Controller
         $vendor->save();
      
       
-      return view('/home_vendor');
+      return view('/home_vendor',compact('jasa'));
     }
 
     public function edit($vendorID)
