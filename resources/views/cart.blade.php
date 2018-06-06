@@ -58,10 +58,6 @@
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
                         </td>
                     @endforeach
-                    <div class="col-md-6 col-md-offset-2">
-                <input type="submit" class="btn btn-primary" value="Bayar Sekarang !"></input>
-                <a class="btn btn-default update" href="{{url('clearCart')}}">Clear Cart</a>
-            </div>
                     @else
                 <p>You have no items in the shopping cart</p>
                 @endif
@@ -72,8 +68,11 @@
         </div>
 
                 <p style="text-align:right;"><b></b> </p>
-        <hr>
-            
+        </tr>
+            <div class="col-md-6 col-md-offset-2">
+                <input type="submit" class="btn btn-primary" value="Bayar Sekarang !"></input>
+                <a class="btn btn-default update" href="{{url('clearCart')}}">Clear Cart</a>
+            </div>
     </div>
 </section> <!--/#cart_items-->
 @endsection

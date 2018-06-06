@@ -10,6 +10,7 @@ use DB;
 use Redirect;
 use View;
 use App\customer;
+use App\jasa;
 use Auth;
 
 class ProfileCustomerController extends Controller
@@ -29,6 +30,7 @@ class ProfileCustomerController extends Controller
       public function store(Request $request){
         
         $customer = new Customer;
+        $jasa = Jasa::all();
         $customer->namaCustomer = $request->namaCustomer;
         $customer->phone = $request->phone;
         $customer->alamat = $request->alamat;
@@ -38,7 +40,7 @@ class ProfileCustomerController extends Controller
         $customer->id = Auth::id();
         $customer->save();  
      
-      return view('/home_customer');
+      return view('/home_customer', compact('jasa'));
     }
 
      public function edit($customerID)
