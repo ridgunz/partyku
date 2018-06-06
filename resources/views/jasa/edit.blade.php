@@ -36,6 +36,13 @@
                             </div>
                         </div>
 
+                          <div class="form-group">
+                            <label class="col-md-2">Deskripsi</label>
+                            <div class="col-md-6">
+                                <input type="text" name="deskripsi" class="form-control" value="{{ $jasa->deskripsi }}"></input>
+                            </div>
+                        </div>
+
 
                          <div class="form-group">
                                 <label for="statusJasa" class="col-md-2">Status Jasa</label>

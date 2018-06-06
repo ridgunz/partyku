@@ -63,6 +63,7 @@ class JasaController extends Controller
         $jasa->namaJasa = $request->namaJasa;
         $jasa->harga = $request->harga;
         $jasa->statusJasa = $request->statusJasa;
+        $jasa->deskripsi = $request->deskripsi;
         $jasa->id = Auth::id();
         
         $file = $request->file('fotoJasa');
@@ -94,6 +95,7 @@ class JasaController extends Controller
         $jasa->namaJasa=$request->input('namaJasa');
         $jasa->harga=$request->input('harga');
         $jasa->statusJasa=$request->input('statusJasa');
+        $jasa->deskripsi=$request->input('deskripsi');
 
         $file = $request->file('fotoJasa');
    		$extension = $file->getClientOriginalExtension();

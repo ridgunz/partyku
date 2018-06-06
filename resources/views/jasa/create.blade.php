@@ -34,6 +34,13 @@
                                     </div>
                               </div>   
 
+                              <div class="form-group">
+                                <label for="harga" class="col-md-2">Deskripsi</label>
+                                    <div class="col-md-6">
+                                <input id="deskripsi" type="text" class="form-control" name="harga">
+                                    </div>
+                              </div>  
+
                                 <div class="form-group">
                                 <label for="statusJasa" class="col-md-2">Status Jasa</label>
                                     <div class="col-md-6">
@@ -43,7 +50,9 @@
                                     <option value="Tidak Tersedia">Tidak Tersedia</option>
                                 </select>
                                     </div>
-                              </div>  
+                              </div> 
+
+
 
                               <div class="form-group">
                                 <label for="fotoJasa" class="col-md-2">Foto</label>

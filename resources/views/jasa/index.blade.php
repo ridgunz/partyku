@@ -31,6 +31,7 @@
                                 	<div class="product_info">
                                     <h6 class="product_name"><a href="#">{{ $jasa->namaJasa }}</a></h6>
                                     <div class="product_price">Rp. {{ $jasa->harga }}</div>
+                                    <div class="status_jasa">{{ $jasa->statusJasa }}</div>
                                     <a href="{{ url('/jasa/'.$jasa->jasaID.'/edit') }}" class="btn btn-info">Edit</a>
                                     <a href="deleteJasa/{{ $jasa->jasaID }}" class="btn btn-info" onclick="alert('Apakah anda yakin ingin menghapus data?')">Delete</a></td>
                                 	</div>

@@ -81,7 +81,12 @@ Route::group(['middleware' => ['web','auth']], function()
 
 	Route::get('/jasa_customer','JasaController@read2');
 	
+	Route::get('cart','CartController@cart');
+	Route::post('/cart', 'CartController@cart');
 
+	Route::get('deleteCart/{id}','CartController@delete');
+
+	Route::get('clearCart','CartController@clear');
 });
 
 Route::get('/form', function(){

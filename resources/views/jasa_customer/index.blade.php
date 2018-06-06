@@ -54,6 +54,9 @@
                          @foreach ($jasa as $jasa)
                         <div class="product-item men">
                             <div class="product discount product_filter">
+                             <form method="POST" action="{{url('cart')}}">
+                             <input type="hidden" name="jasaID" value="{{$jasa->jasaID}}">
+                                {{ csrf_field() }}
                                <div class="product_image">
                                     <img src="{{ url('storage/images/'.$jasa->fotoJasa) }}" alt="">
                                     </div>
@@ -61,8 +64,13 @@
                                     <div class="product_info">
                                     <h6 class="product_name"><a href="#">{{ $jasa->namaJasa }}</a></h6>
                                     <div class="product_price">Rp. {{ $jasa->harga }}</div>
-                            </div>
-                            <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                                    <div class="status_jasa">{{ $jasa->statusJasa }}</div>
+                                    </div>
+                                <button type="submit" class="btn btn-fefault add-to-cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                                Add to cart
+                                </button>
+                            </form>
                         </div>
 
                     </div>

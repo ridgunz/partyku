@@ -79,6 +79,10 @@ class ComposerStaticInit439d9010be33f864f6bbf2352126792a
         array (
             'Illuminate\\' => 11,
         ),
+        'G' => 
+        array (
+            'Gloudemans\\Shoppingcart\\' => 24,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -215,6 +219,10 @@ class ComposerStaticInit439d9010be33f864f6bbf2352126792a
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Gloudemans\\Shoppingcart\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gloudemans/shoppingcart/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -279,13 +287,6 @@ class ComposerStaticInit439d9010be33f864f6bbf2352126792a
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
-        'G' => 
-        array (
-            'Gloudemans\\Shoppingcart' => 
-            array (
-                0 => __DIR__ . '/..' . '/gloudemans/shoppingcart/src',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -296,6 +297,7 @@ class ComposerStaticInit439d9010be33f864f6bbf2352126792a
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Cart' => __DIR__ . '/../..' . '/app/Http/Controllers/Cart.php',
+        'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\JasaController' => __DIR__ . '/../..' . '/app/Http/Controllers/JasaController.php',
@@ -813,18 +815,16 @@ class ComposerStaticInit439d9010be33f864f6bbf2352126792a
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
-        'Gloudemans\\Shoppingcart\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Cart.php',
-        'Gloudemans\\Shoppingcart\\CartCollection' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/CartCollection.php',
-        'Gloudemans\\Shoppingcart\\CartRowCollection' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/CartRowCollection.php',
-        'Gloudemans\\Shoppingcart\\CartRowOptionsCollection' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/CartRowOptionsCollection.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartInstanceException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartInstanceException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartInvalidItemException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartInvalidItemException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartInvalidPriceException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartInvalidPriceException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartInvalidQtyException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartInvalidQtyException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartInvalidRowIDException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartInvalidRowIDException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\ShoppingcartUnknownModelException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Exceptions/ShoppingcartUnknownModelException.php',
-        'Gloudemans\\Shoppingcart\\Facades\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/Facades/Cart.php',
-        'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Gloudemans/Shoppingcart/ShoppingcartServiceProvider.php',
+        'Gloudemans\\Shoppingcart\\CanBeBought' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CanBeBought.php',
+        'Gloudemans\\Shoppingcart\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Cart.php',
+        'Gloudemans\\Shoppingcart\\CartItem' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CartItem.php',
+        'Gloudemans\\Shoppingcart\\CartItemOptions' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/CartItemOptions.php',
+        'Gloudemans\\Shoppingcart\\Contracts\\Buyable' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Contracts/Buyable.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\CartAlreadyStoredException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/CartAlreadyStoredException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\InvalidRowIDException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/InvalidRowIDException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Exceptions/UnknownModelException.php',
+        'Gloudemans\\Shoppingcart\\Facades\\Cart' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/Facades/Cart.php',
+        'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider' => __DIR__ . '/..' . '/gloudemans/shoppingcart/src/ShoppingcartServiceProvider.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
