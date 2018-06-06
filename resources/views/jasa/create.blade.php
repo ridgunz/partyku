@@ -35,9 +35,9 @@
                               </div>   
 
                               <div class="form-group">
-                                <label for="harga" class="col-md-2">Deskripsi</label>
+                                <label for="deskripsi" class="col-md-2">Deskripsi</label>
                                     <div class="col-md-6">
-                                <input id="deskripsi" type="text" class="form-control" name="harga">
+                                <input id="deskripsi" type="text" class="form-control" name="deskripsi">
                                     </div>
                               </div>  
 

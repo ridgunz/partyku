@@ -95,13 +95,7 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="#">home</a></li>
-								<li>
-									 @if (Auth::user()->role == 1)
-                                		           <li><a href="{{ url('/jasa_customer') }}">jasa</a></li>
-                                		        @else
-                                		        	<li><a href="{{ url('/jasa') }}">Jasa</a></li>
-                                		        @endif
-								</li>
+								<li><a href="#">Jasa</a></li>
 								<li><a href="contact.html">contact</a></li>
 							</ul>
 							<ul class="navbar_user">

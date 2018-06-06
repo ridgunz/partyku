@@ -97,9 +97,8 @@
                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                 <li class="checkout">
-                                    <a href="#">
+                                    <a href="{{ url('cart') }}">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        <span id="checkout_items" class="checkout_items">2</span>
                                     </a>
                                 </li>
                             </ul>
