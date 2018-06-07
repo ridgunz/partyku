@@ -13,9 +13,11 @@
           
             <div class="row">
                 <div class="col">
+                <a href="{{ url('jasa/create') }}" class="btn btn-info pull-right">Tambah Data</a><br><br>
                     <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
                         <!-- Product 1 -->
+
                          @foreach ($jasa as $jasa)
                         <div class="product-item men">
                             <div class="product discount product_filter">
