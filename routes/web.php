@@ -90,6 +90,8 @@ Route::group(['middleware' => ['web','auth']], function()
 	Route::get('deleteCart/{id}','CartController@delete');
 
 	Route::get('clearCart','CartController@clear');
+
+	Route::get('cart_confirmation','CartController@confirm');
 });
 
 Route::get('/form', function(){

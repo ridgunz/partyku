@@ -56,6 +56,10 @@ class CartController extends Controller
 		return Redirect::away('cart');
 	}
 
+    public function confirm()
+    {
+        return view('cart_confirmation');
+    }
 }
 
 
